@@ -1,0 +1,1367 @@
+<mxfile host="app.diagrams.net" pages="4">
+  <diagram name="1.核心架构总览" id="p1">
+    <mxGraphModel dx="1422" dy="757" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p1_g1" value="AUTOLOAD 单例" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d4d4d9;dashed=1;dashPattern=5 4;arcSize=8;verticalAlign=top;align=left;spacingLeft=10;fontColor=#6b6b7b;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="680" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_g2" value="数据资源 Resource" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d4d4d9;dashed=1;dashPattern=5 4;arcSize=8;verticalAlign=top;align=left;spacingLeft=10;fontColor=#6b6b7b;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="190" width="680" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_g3" value="场景与玩家" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d4d4d9;dashed=1;dashPattern=5 4;arcSize=8;verticalAlign=top;align=left;spacingLeft=10;fontColor=#6b6b7b;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="330" width="680" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_eb" value="&lt;b style=&quot;font-size:14px&quot;&gt;EventBus&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;事件信号总线&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;6 个 signal&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_inv" value="&lt;b style=&quot;font-size:14px&quot;&gt;Inventory&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;背包 / 装备逻辑&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;add/equip/unequip&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="220" y="60" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_gd" value="&lt;b style=&quot;font-size:14px&quot;&gt;GameData&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;equipment 字典&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;5 部位 key&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="410" y="60" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_ref" value="&lt;b style=&quot;font-size:14px&quot;&gt;Ref&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;全局 player 引用&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;var player&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="60" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_item" value="&lt;b style=&quot;font-size:14px&quot;&gt;Item&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;icon/name/id&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="225" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_idata" value="&lt;b style=&quot;font-size:14px&quot;&gt;ItemData&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;type/max_stack&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="225" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_edata" value="&lt;b style=&quot;font-size:14px&quot;&gt;EquipData&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;equip_type/key&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="225" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_sdata" value="&lt;b style=&quot;font-size:14px&quot;&gt;SlotData&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;item+quantity&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="610" y="225" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_town" value="&lt;b style=&quot;font-size:14px&quot;&gt;Town&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;create_player()&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;监听 EventBus&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="365" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_player" value="&lt;b style=&quot;font-size:14px&quot;&gt;Player 系统&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;Player+FSM+State&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;HealthComponent / 武器&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="365" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_drop" value="&lt;b style=&quot;font-size:14px&quot;&gt;DropItem&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;掉落物 Area2D&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;_on_body_entered&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="365" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e1" value="读写" style="endArrow=classic;startArrow=classic;html=1;rounded=1;strokeColor=#7c5cff;strokeWidth=2;fontColor=#7c5cff;fontSize=11;" edge="1" parent="1" source="p1_inv" target="p1_gd">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e2" value="继承" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" edge="1" parent="1" source="p1_item" target="p1_idata">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e3" value="继承" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" edge="1" parent="1" source="p1_idata" target="p1_edata">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e4" value="生成" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" edge="1" parent="1" source="p1_town" target="p1_player">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e5" value="add_item()" style="endArrow=classic;html=1;rounded=1;strokeColor=#7c5cff;strokeWidth=2;fontColor=#7c5cff;fontSize=11;" edge="1" parent="1" source="p1_drop" target="p1_inv">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e6" value="connect" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" edge="1" parent="1" source="p1_town" target="p1_eb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e7" value="emit 健康/法力" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" edge="1" parent="1" source="p1_player" target="p1_eb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e8" value="Ref.player =" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" edge="1" parent="1" source="p1_player" target="p1_ref">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2.UI层与信号连接" id="p2">
+    <mxGraphModel dx="1422" dy="757" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p2_g1" value="HUD (CanvasLayer)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d4d4d9;dashed=1;dashPattern=5 4;arcSize=8;verticalAlign=top;align=left;spacingLeft=10;fontColor=#6b6b7b;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="680" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_g2" value="UI 面板与槽位脚本" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d4d4d9;dashed=1;dashPattern=5 4;arcSize=8;verticalAlign=top;align=left;spacingLeft=10;fontColor=#6b6b7b;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="160" width="680" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_hud" value="&lt;b style=&quot;font-size:14px&quot;&gt;HUD&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;hud.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;面板开关按钮&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;血/蓝/经验条&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_refs" value="&lt;b style=&quot;font-size:14px&quot;&gt;持有引用&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;%EquipmentPanel&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;%InventoryPanel&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;%StatsPanel 等&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="55" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_eb_ref" value="&lt;b style=&quot;font-size:14px&quot;&gt;EventBus&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;connect:&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;health/mana/level&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="500" y="55" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_invpanel" value="&lt;b style=&quot;font-size:14px&quot;&gt;InventoryPanel&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;inventory_panel.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;左键: swap/merge&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;右键: equip/use&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;&lt;b style=&#39;color:#7c5cff&#39;&gt;connect: on_inventory_changed&lt;/b&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="195" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_eqpanel" value="&lt;b style=&quot;font-size:14px&quot;&gt;EquipmentPanel&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;equipment_panel.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;_on_equipment_changed()&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;按 items[i] 索引赋值&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;&lt;b style=&#39;color:#7c5cff&#39;&gt;connect: on_equipment_changed&lt;/b&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="195" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_invslot" value="&lt;b style=&quot;font-size:14px&quot;&gt;InventorySlot&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;inventory_slot.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;load_data(SlotData)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;signal on_slot_clicked&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;gui_input 已连接&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="355" width="140" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_grabbed" value="&lt;b style=&quot;font-size:14px&quot;&gt;GrabbedSlot&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;InventorySlot 实例&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;拖拽中物品&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;_process 跟随鼠标&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="200" y="355" width="140" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_eqslot" value="&lt;b style=&quot;font-size:14px&quot;&gt;EquipmentSlot&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;equipment_slot.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;@export equip_type&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;load_data(EquipData)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;signal on_slot_clicked&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;&lt;b style=&#39;color:#e06c3a&#39;&gt;gui_input 未在 tscn 连接&lt;/b&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8f5;strokeColor=#e06c3a;strokeWidth=2;dashed=1;arcSize=12;fontColor=#1a1a23;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="355" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e1" value="持有" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" edge="1" parent="1" source="p2_hud" target="p2_refs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e2" value="管理" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" edge="1" parent="1" source="p2_invpanel" target="p2_invslot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e3" value="管理 (断链)" style="endArrow=classic;html=1;rounded=1;strokeColor=#e06c3a;strokeWidth=2;dashed=1;fontColor=#e06c3a;fontSize=11;" edge="1" parent="1" source="p2_eqpanel" target="p2_eqslot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="3.玩家状态机" id="p3">
+    <mxGraphModel dx="5747" dy="1365" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p3_state" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;State / PlayerState&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;基类&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;enter/exit/process&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="40" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_fsm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=12;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;FSM&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;fsm.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;_transition_to()&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="280" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_health" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;HealthComponent&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;take_damage / heal&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;signal on_health_change&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="500" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-167" edge="1" parent="1" source="p3_idle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-152">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_idle" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=20;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;Idle&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;player_state_idle.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;play idle 动画&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="150" x="100" y="1970" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-208" edge="1" parent="1" source="p3_walk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-199">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_walk" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=20;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;Walk&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;player_walk_state.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;move_and_slide&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="150" x="470" y="1970" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_attack" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=20;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;Attack&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;player_state_attack.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;武器碰撞+动画结束&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="150" x="285" y="2100" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e1" edge="1" parent="1" source="p3_fsm" style="endArrow=classic;html=1;rounded=1;strokeColor=#7c5cff;strokeWidth=2;fontColor=#7c5cff;fontSize=11;" target="p3_idle" value="初始状态">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" value="is_moving()判断player是否运动">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="2030" as="sourcePoint" />
+            <mxPoint x="469.99999999999955" y="2030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p3_e3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" value="vector==ZERO">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="469.99999999999955" y="1990" as="sourcePoint" />
+            <mxPoint x="250" y="1990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p3_e4" edge="1" parent="1" source="p3_idle" style="endArrow=classic;html=1;rounded=1;strokeColor=#7c5cff;strokeWidth=2;fontColor=#7c5cff;fontSize=11;" target="p3_attack" value="用户attack输入">
+          <mxGeometry relative="1" x="0.225" y="25" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p3_e5" edge="1" parent="1" source="p3_walk" style="endArrow=classic;html=1;rounded=1;strokeColor=#7c5cff;strokeWidth=2;fontColor=#7c5cff;fontSize=11;" target="p3_attack" value="attack">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e6" edge="1" parent="1" source="p3_attack" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.472;entryY=1.001;entryDx=0;entryDy=0;entryPerimeter=0;" target="p3_idle" value="animation_finished">
+          <mxGeometry relative="1" x="-0.0013" y="31" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="261.1569230769228" y="2110" as="sourcePoint" />
+            <mxPoint x="190.00307692307706" y="2060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p3_e7" edge="1" parent="1" source="p3_state" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" target="p3_fsm" value="基类">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p3_e8" edge="1" parent="1" source="p3_health" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" target="p3_fsm" value="Player 持有">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-44" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Town主场景脚本" vertex="1">
+          <mxGeometry height="120" width="365" x="-1310" y="2386" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-45" parent="GTfDNmllD75vrXHJN5vx-44" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="365" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-46" parent="GTfDNmllD75vrXHJN5vx-45" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;初始化&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="60" as="geometry">
+            <mxRectangle height="30" width="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-47" parent="GTfDNmllD75vrXHJN5vx-45" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;调用创建角色函数&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="305" x="60" as="geometry">
+            <mxRectangle height="30" width="305" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-51" parent="GTfDNmllD75vrXHJN5vx-44" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="365" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-52" parent="GTfDNmllD75vrXHJN5vx-51" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="创建角色" vertex="1">
+          <mxGeometry height="30" width="60" as="geometry">
+            <mxRectangle height="30" width="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-53" parent="GTfDNmllD75vrXHJN5vx-51" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="创建player场景实例并加入到场景树" vertex="1">
+          <mxGeometry height="30" width="305" x="60" as="geometry">
+            <mxRectangle height="30" width="305" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-54" parent="GTfDNmllD75vrXHJN5vx-44" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="365" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-55" parent="GTfDNmllD75vrXHJN5vx-54" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="设置信号" vertex="1">
+          <mxGeometry height="30" width="60" as="geometry">
+            <mxRectangle height="30" width="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-56" parent="GTfDNmllD75vrXHJN5vx-54" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="角色创建信号" vertex="1">
+          <mxGeometry height="30" width="305" x="60" as="geometry">
+            <mxRectangle height="30" width="305" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-251" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-241">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-82" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" value="Town主场景默认结构" vertex="1">
+          <mxGeometry height="116" width="250" x="-1975" y="2380" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-83" parent="GTfDNmllD75vrXHJN5vx-82" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="1. Terrain地形" vertex="1">
+          <mxGeometry height="30" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-84" parent="GTfDNmllD75vrXHJN5vx-82" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="2. HUD游戏界面显示控件" vertex="1">
+          <mxGeometry height="30" width="250" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-85" parent="GTfDNmllD75vrXHJN5vx-82" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="3. 敌人刷新区域" vertex="1">
+          <mxGeometry height="30" width="250" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-86" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" value="HUD游戏界面显示控件" vertex="1">
+          <mxGeometry height="146" width="240" x="-1635" y="2380" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-87" parent="GTfDNmllD75vrXHJN5vx-86" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="1. Player血条" vertex="1">
+          <mxGeometry height="30" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-88" parent="GTfDNmllD75vrXHJN5vx-86" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="2. Player蓝条" vertex="1">
+          <mxGeometry height="30" width="240" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-89" parent="GTfDNmllD75vrXHJN5vx-86" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="3. Player经验条" vertex="1">
+          <mxGeometry height="30" width="240" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-93" parent="GTfDNmllD75vrXHJN5vx-86" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="4. Player背包，技能，状态，装备面板" vertex="1">
+          <mxGeometry height="30" width="240" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-90" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-84" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-88" value="">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="-1705" y="2437.58" as="sourcePoint" />
+            <mxPoint x="-1620" y="2437.58" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-94" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=100;height=30;" value="Town主场景" vertex="1">
+          <mxGeometry height="420" width="1085" x="-2000" y="2320" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-95" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Player场景脚本函数" vertex="1">
+          <mxGeometry height="150" width="625" x="300" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-96" parent="GTfDNmllD75vrXHJN5vx-95" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-97" parent="GTfDNmllD75vrXHJN5vx-96" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;初始化&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-98" parent="GTfDNmllD75vrXHJN5vx-96" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;reset生命和蓝量，设置经验值基数&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-99" parent="GTfDNmllD75vrXHJN5vx-95" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-100" parent="GTfDNmllD75vrXHJN5vx-99" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="处理设置信号" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-101" parent="GTfDNmllD75vrXHJN5vx-99" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="用户信号处理" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-102" parent="GTfDNmllD75vrXHJN5vx-95" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-103" parent="GTfDNmllD75vrXHJN5vx-102" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="设置信号" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-104" parent="GTfDNmllD75vrXHJN5vx-102" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="角色创建信号" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-148" parent="GTfDNmllD75vrXHJN5vx-95" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-149" parent="GTfDNmllD75vrXHJN5vx-148" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-150" parent="GTfDNmllD75vrXHJN5vx-148" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="调用当前状态的帧，处理对应状态下的逻辑：用户输入，切换状态，播放动画等" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-237" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.467;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" target="GTfDNmllD75vrXHJN5vx-227">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-105" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" value="Player场景默认结构" vertex="1">
+          <mxGeometry height="146" width="250" x="-35" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-106" parent="GTfDNmllD75vrXHJN5vx-105" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="1. player贴图、动画、碰撞等属性" vertex="1">
+          <mxGeometry height="30" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-108" parent="GTfDNmllD75vrXHJN5vx-105" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="2. player武器，攻击点位等属性" vertex="1">
+          <mxGeometry height="30" width="250" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-116" parent="GTfDNmllD75vrXHJN5vx-105" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="3. HealthComponent生命值控件" vertex="1">
+          <mxGeometry height="30" width="250" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-117" parent="GTfDNmllD75vrXHJN5vx-105" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="4. FSM状态机节点及相关子状态节点" vertex="1">
+          <mxGeometry height="30" width="250" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-115" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=100;height=30;" value="Player场景" vertex="1">
+          <mxGeometry height="1180" width="2490" x="-800" y="1220" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-128" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-129" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="p3_fsm" value="">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="90" y="1760" />
+              <mxPoint x="360" y="1760" />
+            </Array>
+            <mxPoint x="90" y="1750" as="sourcePoint" />
+            <mxPoint x="260" y="1873" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-129" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;FSM状态机基类：&lt;/b&gt;" vertex="1">
+          <mxGeometry height="104" width="240" x="-30" y="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-130" parent="GTfDNmllD75vrXHJN5vx-129" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="ready初始化函数" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-131" parent="GTfDNmllD75vrXHJN5vx-129" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="transiition状态切换函数" vertex="1">
+          <mxGeometry height="26" width="240" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-132" parent="GTfDNmllD75vrXHJN5vx-129" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="process_state虚函数" vertex="1">
+          <mxGeometry height="26" width="240" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-133" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;State状态类：定义各状态&lt;/b&gt;" vertex="1">
+          <mxGeometry height="104" width="240" x="620" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-134" parent="GTfDNmllD75vrXHJN5vx-133" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="idle状态" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-135" parent="GTfDNmllD75vrXHJN5vx-133" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="attack状态" vertex="1">
+          <mxGeometry height="26" width="240" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-136" parent="GTfDNmllD75vrXHJN5vx-133" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="walk状态" vertex="1">
+          <mxGeometry height="26" width="240" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-138" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-weight: 700;&quot;&gt;State基类：定义状态的基本函数&lt;/span&gt;" vertex="1">
+          <mxGeometry height="104" width="240" x="-30" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-139" parent="GTfDNmllD75vrXHJN5vx-138" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="enter_state虚函数" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-140" parent="GTfDNmllD75vrXHJN5vx-138" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="exit_state虚函数" vertex="1">
+          <mxGeometry height="26" width="240" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-141" parent="GTfDNmllD75vrXHJN5vx-138" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="process_state虚函数" vertex="1">
+          <mxGeometry height="26" width="240" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-142" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-138" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-143" value="基类">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="255" y="1533.6599999999999" as="sourcePoint" />
+            <mxPoint x="295.24" y="1542.338" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-143" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;PlayerState基类：&lt;/b&gt;" vertex="1">
+          <mxGeometry height="52" width="240" x="285" y="1516" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-144" parent="GTfDNmllD75vrXHJN5vx-143" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="定义player初始化ready函数" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-145" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-143" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-133" value="基类">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="410" y="1620" as="sourcePoint" />
+            <mxPoint x="485" y="1620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-146" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-138" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-129" value="持有">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="260" y="1660" as="sourcePoint" />
+            <mxPoint x="335" y="1660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-151" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-133" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-131" value="访问">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="740" y="1705" />
+            </Array>
+            <mxPoint x="640" y="1610" as="sourcePoint" />
+            <mxPoint x="735" y="1610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-152" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Idle状态类" vertex="1">
+          <mxGeometry height="150" width="625" x="-600" y="1945" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-153" parent="GTfDNmllD75vrXHJN5vx-152" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-154" parent="GTfDNmllD75vrXHJN5vx-153" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;enter_state&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-155" parent="GTfDNmllD75vrXHJN5vx-153" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;播放idle对应动画&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-156" parent="GTfDNmllD75vrXHJN5vx-152" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-157" parent="GTfDNmllD75vrXHJN5vx-156" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-158" parent="GTfDNmllD75vrXHJN5vx-156" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="无，默认状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-159" parent="GTfDNmllD75vrXHJN5vx-152" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-160" parent="GTfDNmllD75vrXHJN5vx-159" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="input" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-161" parent="GTfDNmllD75vrXHJN5vx-159" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="处理用户输入，检测是否切换状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-188" parent="GTfDNmllD75vrXHJN5vx-152" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-189" parent="GTfDNmllD75vrXHJN5vx-188" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="exit_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-190" parent="GTfDNmllD75vrXHJN5vx-188" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="无，默认状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-168" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Attack状态类" vertex="1">
+          <mxGeometry height="150" width="625" x="55" y="2210" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-169" parent="GTfDNmllD75vrXHJN5vx-168" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-170" parent="GTfDNmllD75vrXHJN5vx-169" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;enter_state&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-171" parent="GTfDNmllD75vrXHJN5vx-169" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;播放Attack对应动画，绑定动画结束信号，放置武器&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-172" parent="GTfDNmllD75vrXHJN5vx-168" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-173" parent="GTfDNmllD75vrXHJN5vx-172" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-174" parent="GTfDNmllD75vrXHJN5vx-172" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="无" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-175" parent="GTfDNmllD75vrXHJN5vx-168" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-176" parent="GTfDNmllD75vrXHJN5vx-175" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="input" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-177" parent="GTfDNmllD75vrXHJN5vx-175" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="处理用户输入，检测是否切换状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-191" parent="GTfDNmllD75vrXHJN5vx-168" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-192" parent="GTfDNmllD75vrXHJN5vx-191" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="exit_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-193" parent="GTfDNmllD75vrXHJN5vx-191" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="断开信号连接" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-194" edge="1" parent="1" source="p3_attack" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.484;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;" target="GTfDNmllD75vrXHJN5vx-168">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-195" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Walk状态类" vertex="1">
+          <mxGeometry height="150" width="625" x="760" y="1935" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-196" parent="GTfDNmllD75vrXHJN5vx-195" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-197" parent="GTfDNmllD75vrXHJN5vx-196" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;enter_state&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-198" parent="GTfDNmllD75vrXHJN5vx-196" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;播放Walk对应动画&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-199" parent="GTfDNmllD75vrXHJN5vx-195" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-200" parent="GTfDNmllD75vrXHJN5vx-199" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-201" parent="GTfDNmllD75vrXHJN5vx-199" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;text-decoration: underline;&quot;&gt;获取用户输入的方向向量，检测是否切换状态以及方向动画切换&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-202" parent="GTfDNmllD75vrXHJN5vx-195" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-203" parent="GTfDNmllD75vrXHJN5vx-202" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="input" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-204" parent="GTfDNmllD75vrXHJN5vx-202" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="处理用户输入，检测是否切换状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-205" parent="GTfDNmllD75vrXHJN5vx-195" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-206" parent="GTfDNmllD75vrXHJN5vx-205" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="exit_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-207" parent="GTfDNmllD75vrXHJN5vx-205" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="断开信号连接" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-210" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Player场景脚本变量" vertex="1">
+          <mxGeometry height="150" width="625" x="970" y="1278" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-211" parent="GTfDNmllD75vrXHJN5vx-210" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-212" parent="GTfDNmllD75vrXHJN5vx-211" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="人物属性stats" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-213" parent="GTfDNmllD75vrXHJN5vx-211" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;reset生命和蓝量，设置经验值基数&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-214" parent="GTfDNmllD75vrXHJN5vx-210" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-215" parent="GTfDNmllD75vrXHJN5vx-214" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="人物经验exp" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-216" parent="GTfDNmllD75vrXHJN5vx-214" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="用户信号处理" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-217" parent="GTfDNmllD75vrXHJN5vx-210" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-218" parent="GTfDNmllD75vrXHJN5vx-217" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="设置信号" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-219" parent="GTfDNmllD75vrXHJN5vx-217" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="角色创建信号" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-220" parent="GTfDNmllD75vrXHJN5vx-210" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-221" parent="GTfDNmllD75vrXHJN5vx-220" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-222" parent="GTfDNmllD75vrXHJN5vx-220" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="调用当前状态的帧，处理对应状态下的逻辑：用户输入，切换状态，播放动画等" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-223" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Player场景中&lt;span style=&quot;font-weight: 400; text-align: left;&quot;&gt;HealthComponent生命值控件&lt;/span&gt;" vertex="1">
+          <mxGeometry height="120" width="625" x="-720" y="1290" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-224" parent="GTfDNmllD75vrXHJN5vx-223" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-225" parent="GTfDNmllD75vrXHJN5vx-224" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="受伤函数" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-226" parent="GTfDNmllD75vrXHJN5vx-224" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;调用后对player进行生命扣除&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-227" parent="GTfDNmllD75vrXHJN5vx-223" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-228" parent="GTfDNmllD75vrXHJN5vx-227" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="回复函数" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-229" parent="GTfDNmllD75vrXHJN5vx-227" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="调用后对player进行生命恢复" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-230" parent="GTfDNmllD75vrXHJN5vx-223" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-231" parent="GTfDNmllD75vrXHJN5vx-230" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="设置信号" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-232" parent="GTfDNmllD75vrXHJN5vx-230" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="player生命值变化，方面刷新player面板" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-241" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="敌人刷新区域脚本" vertex="1">
+          <mxGeometry height="150" width="415" x="-1970" y="2580" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-242" parent="GTfDNmllD75vrXHJN5vx-241" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="415" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-243" parent="GTfDNmllD75vrXHJN5vx-242" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;初始化&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="110" as="geometry">
+            <mxRectangle height="30" width="110" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-244" parent="GTfDNmllD75vrXHJN5vx-242" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;设置timer定时创建敌人&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="305" x="110" as="geometry">
+            <mxRectangle height="30" width="305" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-245" parent="GTfDNmllD75vrXHJN5vx-241" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="415" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-246" parent="GTfDNmllD75vrXHJN5vx-245" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="敌人生成函数" vertex="1">
+          <mxGeometry height="30" width="110" as="geometry">
+            <mxRectangle height="30" width="110" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-247" parent="GTfDNmllD75vrXHJN5vx-245" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="创建enemy实例并加入到场景树" vertex="1">
+          <mxGeometry height="30" width="305" x="110" as="geometry">
+            <mxRectangle height="30" width="305" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-248" parent="GTfDNmllD75vrXHJN5vx-241" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="415" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-249" parent="GTfDNmllD75vrXHJN5vx-248" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="设置信号" vertex="1">
+          <mxGeometry height="30" width="110" as="geometry">
+            <mxRectangle height="30" width="110" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-250" parent="GTfDNmllD75vrXHJN5vx-248" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="连接enemy死亡信号" vertex="1">
+          <mxGeometry height="30" width="305" x="110" as="geometry">
+            <mxRectangle height="30" width="305" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-252" parent="GTfDNmllD75vrXHJN5vx-241" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="415" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-253" parent="GTfDNmllD75vrXHJN5vx-252" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="随机函数" vertex="1">
+          <mxGeometry height="30" width="110" as="geometry">
+            <mxRectangle height="30" width="110" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-254" parent="GTfDNmllD75vrXHJN5vx-252" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="用于敌人位置的随机生成" vertex="1">
+          <mxGeometry height="30" width="305" x="110" as="geometry">
+            <mxRectangle height="30" width="305" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-255" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;State / PlayerState&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;基类&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;enter/exit/process&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="40" y="3240" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-256" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=12;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;FSM&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;fsm.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;_transition_to()&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="280" y="3240" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-257" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;arcSize=12;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;HealthComponent&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;take_damage / heal&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;signal on_health_change&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="500" y="3240" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-258" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-259" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-310">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-259" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=20;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;Idle&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;player_state_idle.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;play idle 动画&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="150" x="100" y="3380" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-260" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-261" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-341">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-261" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=20;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;Walk&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;player_walk_state.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;move_and_slide&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="150" x="470" y="3380" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-262" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c5cff;strokeWidth=2;arcSize=20;fontColor=#1a1a23;fontSize=12;" value="&lt;b style=&quot;font-size:14px&quot;&gt;Attack&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;player_state_attack.gd&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:#6b6b7b;font-size:11px&quot;&gt;武器碰撞+动画结束&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="150" x="285" y="3510" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-263" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-256" style="endArrow=classic;html=1;rounded=1;strokeColor=#7c5cff;strokeWidth=2;fontColor=#7c5cff;fontSize=11;" target="GTfDNmllD75vrXHJN5vx-259" value="初始状态">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-264" edge="1" parent="1" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" value="is_moving()判断player是否运动">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="3440" as="sourcePoint" />
+            <mxPoint x="469.99999999999955" y="3440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-265" edge="1" parent="1" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" value="vector==ZERO">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="469.99999999999955" y="3400" as="sourcePoint" />
+            <mxPoint x="250" y="3400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-266" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-259" style="endArrow=classic;html=1;rounded=1;strokeColor=#7c5cff;strokeWidth=2;fontColor=#7c5cff;fontSize=11;" target="GTfDNmllD75vrXHJN5vx-262" value="用户attack输入">
+          <mxGeometry relative="1" x="0.225" y="25" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-267" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-261" style="endArrow=classic;html=1;rounded=1;strokeColor=#7c5cff;strokeWidth=2;fontColor=#7c5cff;fontSize=11;" target="GTfDNmllD75vrXHJN5vx-262" value="attack">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-268" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-262" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.472;entryY=1.001;entryDx=0;entryDy=0;entryPerimeter=0;" target="GTfDNmllD75vrXHJN5vx-259" value="animation_finished">
+          <mxGeometry relative="1" x="-0.0013" y="31" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="261.1569230769228" y="3520" as="sourcePoint" />
+            <mxPoint x="190.00307692307706" y="3470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-269" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-255" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" target="GTfDNmllD75vrXHJN5vx-256" value="基类">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-270" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-257" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;" target="GTfDNmllD75vrXHJN5vx-256" value="Player 持有">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-271" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Player场景脚本函数" vertex="1">
+          <mxGeometry height="150" width="625" x="300" y="2690" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-272" parent="GTfDNmllD75vrXHJN5vx-271" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-273" parent="GTfDNmllD75vrXHJN5vx-272" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;初始化&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-274" parent="GTfDNmllD75vrXHJN5vx-272" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;reset生命和蓝量，设置经验值基数&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-275" parent="GTfDNmllD75vrXHJN5vx-271" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-276" parent="GTfDNmllD75vrXHJN5vx-275" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="处理设置信号" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-277" parent="GTfDNmllD75vrXHJN5vx-275" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="用户信号处理" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-278" parent="GTfDNmllD75vrXHJN5vx-271" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-279" parent="GTfDNmllD75vrXHJN5vx-278" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="设置信号" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-280" parent="GTfDNmllD75vrXHJN5vx-278" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="角色创建信号" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-281" parent="GTfDNmllD75vrXHJN5vx-271" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-282" parent="GTfDNmllD75vrXHJN5vx-281" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-283" parent="GTfDNmllD75vrXHJN5vx-281" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="调用当前状态的帧，处理对应状态下的逻辑：用户输入，切换状态，播放动画等" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-284" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-288" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.467;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" target="GTfDNmllD75vrXHJN5vx-367">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-285" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" value="Enemy场景默认结构" vertex="1">
+          <mxGeometry height="146" width="250" x="-35" y="2690" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-286" parent="GTfDNmllD75vrXHJN5vx-285" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="1. player贴图、动画、碰撞等属性" vertex="1">
+          <mxGeometry height="30" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-287" parent="GTfDNmllD75vrXHJN5vx-285" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="2. player武器，攻击点位等属性" vertex="1">
+          <mxGeometry height="30" width="250" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-288" parent="GTfDNmllD75vrXHJN5vx-285" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="3. HealthComponent生命值控件" vertex="1">
+          <mxGeometry height="30" width="250" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-289" parent="GTfDNmllD75vrXHJN5vx-285" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="4. FSM状态机节点及相关子状态节点" vertex="1">
+          <mxGeometry height="30" width="250" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-290" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=100;height=30;" value="Enemy场景" vertex="1">
+          <mxGeometry height="1180" width="2490" x="-800" y="2630" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-291" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-292" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="GTfDNmllD75vrXHJN5vx-256" value="">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="90" y="3170" />
+              <mxPoint x="360" y="3170" />
+            </Array>
+            <mxPoint x="90" y="3160" as="sourcePoint" />
+            <mxPoint x="260" y="3283" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-292" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;FSM状态机基类：&lt;/b&gt;" vertex="1">
+          <mxGeometry height="104" width="240" x="-30" y="3050" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-293" parent="GTfDNmllD75vrXHJN5vx-292" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="ready初始化函数" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-294" parent="GTfDNmllD75vrXHJN5vx-292" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="transiition状态切换函数" vertex="1">
+          <mxGeometry height="26" width="240" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-295" parent="GTfDNmllD75vrXHJN5vx-292" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="process_state虚函数" vertex="1">
+          <mxGeometry height="26" width="240" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-296" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;State状态类：定义各状态&lt;/b&gt;" vertex="1">
+          <mxGeometry height="104" width="240" x="620" y="2900" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-297" parent="GTfDNmllD75vrXHJN5vx-296" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="idle状态" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-298" parent="GTfDNmllD75vrXHJN5vx-296" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="attack状态" vertex="1">
+          <mxGeometry height="26" width="240" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-299" parent="GTfDNmllD75vrXHJN5vx-296" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="walk状态" vertex="1">
+          <mxGeometry height="26" width="240" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-300" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-weight: 700;&quot;&gt;State基类：定义状态的基本函数&lt;/span&gt;" vertex="1">
+          <mxGeometry height="104" width="240" x="-30" y="2900" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-301" parent="GTfDNmllD75vrXHJN5vx-300" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="enter_state虚函数" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-302" parent="GTfDNmllD75vrXHJN5vx-300" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="exit_state虚函数" vertex="1">
+          <mxGeometry height="26" width="240" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-303" parent="GTfDNmllD75vrXHJN5vx-300" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="process_state虚函数" vertex="1">
+          <mxGeometry height="26" width="240" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-304" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-300" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-305" value="基类">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="255" y="2943.66" as="sourcePoint" />
+            <mxPoint x="295.24" y="2952.3379999999997" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-305" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;PlayerState基类：&lt;/b&gt;" vertex="1">
+          <mxGeometry height="52" width="240" x="285" y="2926" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-306" parent="GTfDNmllD75vrXHJN5vx-305" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="定义player初始化ready函数" vertex="1">
+          <mxGeometry height="26" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-307" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-305" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-296" value="基类">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="410" y="3030" as="sourcePoint" />
+            <mxPoint x="485" y="3030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-308" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-300" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-292" value="持有">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="260" y="3070" as="sourcePoint" />
+            <mxPoint x="335" y="3070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-309" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-296" style="endArrow=classic;html=1;rounded=1;strokeColor=#6b6b7b;strokeWidth=1.5;fontColor=#6b6b7b;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="GTfDNmllD75vrXHJN5vx-294" value="访问">
+          <mxGeometry relative="1" x="0.0115" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="740" y="3115" />
+            </Array>
+            <mxPoint x="640" y="3020" as="sourcePoint" />
+            <mxPoint x="735" y="3020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-310" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Idle状态类" vertex="1">
+          <mxGeometry height="150" width="625" x="-600" y="3355" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-311" parent="GTfDNmllD75vrXHJN5vx-310" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-312" parent="GTfDNmllD75vrXHJN5vx-311" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;enter_state&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-313" parent="GTfDNmllD75vrXHJN5vx-311" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;播放idle对应动画&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-314" parent="GTfDNmllD75vrXHJN5vx-310" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-315" parent="GTfDNmllD75vrXHJN5vx-314" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-316" parent="GTfDNmllD75vrXHJN5vx-314" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="无，默认状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-317" parent="GTfDNmllD75vrXHJN5vx-310" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-318" parent="GTfDNmllD75vrXHJN5vx-317" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="input" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-319" parent="GTfDNmllD75vrXHJN5vx-317" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="处理用户输入，检测是否切换状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-320" parent="GTfDNmllD75vrXHJN5vx-310" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-321" parent="GTfDNmllD75vrXHJN5vx-320" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="exit_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-322" parent="GTfDNmllD75vrXHJN5vx-320" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="无，默认状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-323" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Attack状态类" vertex="1">
+          <mxGeometry height="150" width="625" x="55" y="3620" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-324" parent="GTfDNmllD75vrXHJN5vx-323" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-325" parent="GTfDNmllD75vrXHJN5vx-324" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;enter_state&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-326" parent="GTfDNmllD75vrXHJN5vx-324" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;播放Attack对应动画，绑定动画结束信号，放置武器&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-327" parent="GTfDNmllD75vrXHJN5vx-323" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-328" parent="GTfDNmllD75vrXHJN5vx-327" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-329" parent="GTfDNmllD75vrXHJN5vx-327" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="无" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-330" parent="GTfDNmllD75vrXHJN5vx-323" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-331" parent="GTfDNmllD75vrXHJN5vx-330" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="input" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-332" parent="GTfDNmllD75vrXHJN5vx-330" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="处理用户输入，检测是否切换状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-333" parent="GTfDNmllD75vrXHJN5vx-323" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-334" parent="GTfDNmllD75vrXHJN5vx-333" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="exit_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-335" parent="GTfDNmllD75vrXHJN5vx-333" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="断开信号连接" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-336" edge="1" parent="1" source="GTfDNmllD75vrXHJN5vx-262" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.484;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;" target="GTfDNmllD75vrXHJN5vx-323">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-337" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Walk状态类" vertex="1">
+          <mxGeometry height="150" width="625" x="760" y="3345" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-338" parent="GTfDNmllD75vrXHJN5vx-337" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-339" parent="GTfDNmllD75vrXHJN5vx-338" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;enter_state&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-340" parent="GTfDNmllD75vrXHJN5vx-338" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;播放Walk对应动画&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-341" parent="GTfDNmllD75vrXHJN5vx-337" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-342" parent="GTfDNmllD75vrXHJN5vx-341" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-343" parent="GTfDNmllD75vrXHJN5vx-341" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;text-decoration: underline;&quot;&gt;获取用户输入的方向向量，检测是否切换状态以及方向动画切换&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-344" parent="GTfDNmllD75vrXHJN5vx-337" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-345" parent="GTfDNmllD75vrXHJN5vx-344" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="input" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-346" parent="GTfDNmllD75vrXHJN5vx-344" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="处理用户输入，检测是否切换状态" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-347" parent="GTfDNmllD75vrXHJN5vx-337" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-348" parent="GTfDNmllD75vrXHJN5vx-347" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="exit_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-349" parent="GTfDNmllD75vrXHJN5vx-347" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="断开信号连接" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-350" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Player场景脚本变量" vertex="1">
+          <mxGeometry height="150" width="625" x="970" y="2688" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-351" parent="GTfDNmllD75vrXHJN5vx-350" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-352" parent="GTfDNmllD75vrXHJN5vx-351" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="人物属性stats" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-353" parent="GTfDNmllD75vrXHJN5vx-351" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;reset生命和蓝量，设置经验值基数&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-354" parent="GTfDNmllD75vrXHJN5vx-350" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-355" parent="GTfDNmllD75vrXHJN5vx-354" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="人物经验exp" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-356" parent="GTfDNmllD75vrXHJN5vx-354" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="用户信号处理" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-357" parent="GTfDNmllD75vrXHJN5vx-350" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-358" parent="GTfDNmllD75vrXHJN5vx-357" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="设置信号" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-359" parent="GTfDNmllD75vrXHJN5vx-357" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="角色创建信号" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-360" parent="GTfDNmllD75vrXHJN5vx-350" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-361" parent="GTfDNmllD75vrXHJN5vx-360" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="空闲帧调用 process_state" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-362" parent="GTfDNmllD75vrXHJN5vx-360" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="调用当前状态的帧，处理对应状态下的逻辑：用户输入，切换状态，播放动画等" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-363" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;whiteSpace=wrap;" value="Player场景中&lt;span style=&quot;font-weight: 400; text-align: left;&quot;&gt;HealthComponent生命值控件&lt;/span&gt;" vertex="1">
+          <mxGeometry height="120" width="625" x="-720" y="2700" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-364" parent="GTfDNmllD75vrXHJN5vx-363" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-365" parent="GTfDNmllD75vrXHJN5vx-364" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;whiteSpace=wrap;" value="受伤函数" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-366" parent="GTfDNmllD75vrXHJN5vx-364" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;html=1;whiteSpace=wrap;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;调用后对player进行生命扣除&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-367" parent="GTfDNmllD75vrXHJN5vx-363" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-368" parent="GTfDNmllD75vrXHJN5vx-367" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="回复函数" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-369" parent="GTfDNmllD75vrXHJN5vx-367" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="调用后对player进行生命恢复" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-370" parent="GTfDNmllD75vrXHJN5vx-363" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;" value="" vertex="1">
+          <mxGeometry height="30" width="625" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-371" parent="GTfDNmllD75vrXHJN5vx-370" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;html=1;whiteSpace=wrap;" value="设置信号" vertex="1">
+          <mxGeometry height="30" width="155" as="geometry">
+            <mxRectangle height="30" width="155" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GTfDNmllD75vrXHJN5vx-372" parent="GTfDNmllD75vrXHJN5vx-370" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;html=1;whiteSpace=wrap;" value="player生命值变化，方面刷新player面板" vertex="1">
+          <mxGeometry height="30" width="470" x="155" as="geometry">
+            <mxRectangle height="30" width="470" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="4.信号注册表" id="p4">
+    <mxGraphModel dx="1422" dy="757" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p4_r0c0" value="信号" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f7;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;fontStyle=1;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r0c1" value="发出方" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f7;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;fontStyle=1;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="40" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r0c2" value="监听方" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f7;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;fontStyle=1;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="40" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r1c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_inventory_changed&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="76" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r1c1" value="Inventory" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="76" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r1c2" value="&lt;span style=&quot;color:#2faa6a&quot;&gt;+ InventoryPanel._on_inventory_changed&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="76" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r2c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_equipment_changed&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="112" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r2c1" value="Inventory" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="112" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r2c2" value="&lt;span style=&quot;color:#2faa6a&quot;&gt;+ EquipmentPanel._on_equipment_changed&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="112" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r3c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_slot_clicked (背包)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="148" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r3c1" value="InventorySlot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="148" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r3c2" value="&lt;span style=&quot;color:#2faa6a&quot;&gt;+ InventoryPanel._on_slot_clicked&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="148" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r4c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_slot_clicked (装备)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="184" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r4c1" value="EquipmentSlot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="184" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r4c2" value="&lt;span style=&quot;color:#2faa6a&quot;&gt;+ EquipmentPanel._on_slot_clicked&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="184" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r5c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;gui_input (内置信号)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r5c1" value="EquipmentSlot Button" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="220" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r5c2" value="&lt;span style=&quot;color:#e06c3a&quot;&gt;!! tscn未connect -&gt; _on_gui_input不触发&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="220" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r6c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_player_created&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="256" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r6c1" value="Town" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="256" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r6c2" value="&lt;span style=&quot;color:#6b6b7b&quot;&gt;暂无监听方&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="256" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r7c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_player_health_updated&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="292" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r7c1" value="Player / HealthComponent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="292" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r7c2" value="&lt;span style=&quot;color:#2faa6a&quot;&gt;+ HUD._on_player_health_updated&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="292" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r8c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_player_mana_updated&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="328" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r8c1" value="Player" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="328" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r8c2" value="&lt;span style=&quot;color:#2faa6a&quot;&gt;+ HUD._on_player_mana_updated&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="328" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r9c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_player_new_level&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="364" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r9c1" value="Player" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="364" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r9c2" value="&lt;span style=&quot;color:#2faa6a&quot;&gt;+ HUD._on_player_new_level_updated&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="364" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r10c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_player_stats_updated&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r10c1" value="Player.level_up" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="400" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r10c2" value="&lt;span style=&quot;color:#6b6b7b&quot;&gt;暂无监听方 (StatsPanel待接)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="400" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r11c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_inventory_used_item&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="436" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r11c1" value="InventoryPanel" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="436" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r11c2" value="&lt;span style=&quot;color:#2faa6a&quot;&gt;+ Town._on_inventory_used_item&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="436" width="300" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r12c0" value="&lt;b style=&quot;color:#7c5cff&quot;&gt;on_health_change / on_dead&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="472" width="280" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r12c1" value="HealthComponent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="472" width="170" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4_r12c2" value="&lt;span style=&quot;color:#2faa6a&quot;&gt;+ Player (场景内连接)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d4d4d9;fontColor=#1a1a23;fontSize=12;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="472" width="300" height="34" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

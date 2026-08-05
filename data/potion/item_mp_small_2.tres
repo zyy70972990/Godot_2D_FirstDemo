@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dsegq7skovpf1"]
+
+[ext_resource type="Texture2D" uid="uid://cav6bn6nfxs0l" path="res://Sprites/Items/Potion/WaterPot.png" id="1_floyo"]
+[ext_resource type="Script" uid="uid://b2gqia77l0nhd" path="res://data/item_data.gd" id="2_v50xf"]
+
+[resource]
+script = ExtResource("2_v50xf")
+is_consumable = true
+max_stack = 64
+value = 5.0
+icon = ExtResource("1_floyo")
+name = "Potion_5MP"
+price = 3
+id = "mana_potion"
+metadata/_custom_type_script = "uid://b2gqia77l0nhd"

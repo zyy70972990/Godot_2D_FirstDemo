@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://c02w2xu4pxkno"]
+
+[ext_resource type="Texture2D" uid="uid://l58lkiu042xv" path="res://Sprites/Actor/Characters/Shadow.png" id="1_1brl7"]
+[ext_resource type="Script" uid="uid://dis8pcb44vr5g" path="res://Scene/Enemy/enemy.gd" id="1_mf7eg"]
+[ext_resource type="Script" uid="uid://f2r655n5e7r" path="res://data/loot_data.gd" id="2_bqa77"]
+[ext_resource type="Texture2D" uid="uid://dmwuj01b4ll4n" path="res://Sprites/Actor/Monsters/Mouse/SpriteSheet.png" id="2_d7pil"]
+[ext_resource type="Resource" uid="uid://dsegq7skovpf1" path="res://data/potion/item_mp_small_2.tres" id="3_40041"]
+[ext_resource type="Texture2D" uid="uid://b25swkh2ytg3p" path="res://Sprites/Selector.png" id="3_mf7eg"]
+[ext_resource type="Resource" uid="uid://fnrj5iympnyy" path="res://data/potion/item_hp_small_2.tres" id="4_cy1ah"]
+[ext_resource type="PackedScene" uid="uid://ivayf7ghuxs1" path="res://Scene/Component/health_component.tscn" id="4_d7pil"]
+[ext_resource type="Script" uid="uid://lqbotyhxg1qf" path="res://Scripts/FSM.gd" id="6_l2ebk"]
+[ext_resource type="Script" uid="uid://f4867xesjn6c" path="res://Scene/Enemy/states/enemy_wander_state.gd" id="7_cpvux"]
+[ext_resource type="Script" uid="uid://blkulayqguk0d" path="res://Scene/Enemy/states/enemy_follow_state.gd" id="8_cpvux"]
+[ext_resource type="Script" uid="uid://dtvqajtv0t2no" path="res://Scene/Enemy/states/enemy_attack_state.gd" id="9_l6v7j"]
+
+[sub_resource type="Resource" id="Resource_l6v7j"]
+script = ExtResource("2_bqa77")
+item = ExtResource("3_40041")
+amount = 2
+metadata/_custom_type_script = "uid://f2r655n5e7r"
+
+[sub_resource type="Resource" id="Resource_rxbpy"]
+script = ExtResource("2_bqa77")
+item = ExtResource("4_cy1ah")
+metadata/_custom_type_script = "uid://f2r655n5e7r"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga2g3"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2ebk"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpvux"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6v7j"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqa77"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl74f"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40041"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy1ah"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hear5"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37oj8"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lddvt"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x10ay"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ageug"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd3w7"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogjw7"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swqin"]
+atlas = ExtResource("2_d7pil")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjbn1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga2g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2ebk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpvux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6v7j")
+}],
+"loop": 1,
+"name": &"move_down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqa77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl74f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40041")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy1ah")
+}],
+"loop": 1,
+"name": &"move_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hear5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37oj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lddvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x10ay")
+}],
+"loop": 1,
+"name": &"move_right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ageug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd3w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogjw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swqin")
+}],
+"loop": 1,
+"name": &"move_up",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4rxgp"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjbn1"]
+radius = 35.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rxgp"]
+bg_color = Color(0.25490198, 0.023529412, 0.02745098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjbn1"]
+bg_color = Color(0.70980394, 0.13725491, 0.14901961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.25490198, 0.023529412, 0.02745098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="EnemyMouse" type="Area2D" unique_id=339186346]
+collision_layer = 4
+script = ExtResource("1_mf7eg")
+loot = Array[ExtResource("2_bqa77")]([SubResource("Resource_l6v7j"), SubResource("Resource_rxbpy")])
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=48568839]
+self_modulate = Color(1, 1, 1, 0.19607843)
+scale = Vector2(1.5, 1.2)
+texture = ExtResource("1_1brl7")
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="." unique_id=396965546]
+position = Vector2(1, -8)
+sprite_frames = SubResource("SpriteFrames_xjbn1")
+animation = &"move_down"
+
+[node name="Selector" type="Sprite2D" parent="." unique_id=1000022390]
+visible = false
+position = Vector2(0, -5)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_mf7eg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067463711]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_4rxgp")
+
+[node name="DetectArea" type="Area2D" parent="." unique_id=2046611616]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" unique_id=1630863647]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_xjbn1")
+debug_color = Color(0.9529412, 0.1882353, 0.3137255, 0.19607843)
+
+[node name="HealthComponent" parent="." unique_id=318909482 instance=ExtResource("4_d7pil")]
+
+[node name="FSM" type="Node" parent="." unique_id=1246206042]
+script = ExtResource("6_l2ebk")
+Initial_state = NodePath("Wander")
+
+[node name="Wander" type="Node" parent="FSM" unique_id=432115714]
+script = ExtResource("7_cpvux")
+
+[node name="Follow" type="Node" parent="FSM" unique_id=1347357397]
+script = ExtResource("8_cpvux")
+
+[node name="Attack" type="Node" parent="FSM" unique_id=128194263]
+script = ExtResource("9_l6v7j")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=285314934]
+custom_minimum_size = Vector2(20, 5)
+offset_left = -10.0
+offset_top = -23.0
+offset_right = 10.0
+offset_bottom = -18.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4rxgp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xjbn1")
+max_value = 1.0
+step = 0.001
+value = 1.0
+show_percentage = false
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
+[connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]
+[connection signal="on_dead" from="HealthComponent" to="." method="_on_health_component_on_dead"]
+[connection signal="on_health_change" from="HealthComponent" to="." method="_on_health_component_on_health_change"]

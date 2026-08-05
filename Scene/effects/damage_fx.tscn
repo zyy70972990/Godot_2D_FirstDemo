@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cuosej0g6aki2"]
+
+[ext_resource type="Texture2D" uid="uid://bi7urqwya3ggv" path="res://Sprites/FX/Magic/Circle/SpriteSheetOrange.png" id="1_imjtt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k56nx"]
+atlas = ExtResource("1_imjtt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udr1d"]
+atlas = ExtResource("1_imjtt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shcfj"]
+atlas = ExtResource("1_imjtt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta4en"]
+atlas = ExtResource("1_imjtt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ek5sh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k56nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udr1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shcfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta4en")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="DamageFX" type="AnimatedSprite2D" unique_id=354228024]
+sprite_frames = SubResource("SpriteFrames_ek5sh")
+autoplay = "default"

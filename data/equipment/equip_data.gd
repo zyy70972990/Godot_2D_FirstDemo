@@ -1,0 +1,29 @@
+extends ItemData
+class_name EquipData
+
+enum EquipType {
+	HELMET,
+	BODY,
+	LEGS,
+	WEAPON,
+	RING
+}
+
+@export var equip_type: EquipType
+@export var bonus_damage: float = 0.0
+#@export var bonus_health: float = 0.0
+#@export var bonus_mana: float = 0.0
+#@export var bonus_speed: float = 0.0
+
+func _init() -> void:
+	type = Type.EQUIPMENT
+	max_stack = 1
+	
+func get_equip_key() -> String:
+	match equip_type:
+		EquipType.HELMET: return "helmet"
+		EquipType.BODY: return "body"
+		EquipType.LEGS: return "legs"
+		EquipType.WEAPON: return "weapon"
+		EquipType.RING: return "ring"
+	return "invalid"

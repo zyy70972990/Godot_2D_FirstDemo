@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EquipData" format=3 uid="uid://bkveh41fbcqqy"]
+
+[ext_resource type="Script" uid="uid://b2xn6fglgq127" path="res://data/equipment/equip_data.gd" id="1_jwhto"]
+[ext_resource type="Texture2D" uid="uid://bf3kx0rce6k0x" path="res://Sprites/Equipment/placeholder_helmet.png" id="1_uj8yk"]
+
+[resource]
+script = ExtResource("1_jwhto")
+equip_type = null
+type = 4
+is_consumable = null
+max_stack = 1
+value = null
+icon = ExtResource("1_uj8yk")
+name = "Commn helmet"
+description = null
+price = 20
+id = "equip_helmet"
+metadata/_custom_type_script = "uid://b2xn6fglgq127"

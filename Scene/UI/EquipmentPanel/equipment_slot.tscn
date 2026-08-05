@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bfpf8tf0rg5lt"]
+
+[ext_resource type="Script" uid="uid://bvgkixquxo3ou" path="res://Scene/UI/EquipmentPanel/equipment_slot.gd" id="1_bbad2"]
+[ext_resource type="Texture2D" uid="uid://bf3kx0rce6k0x" path="res://Sprites/Equipment/placeholder_helmet.png" id="2_2k0yb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poj8k"]
+bg_color = Color(0.21960784, 0.23137255, 0.2901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5662981, 0.56629825, 0.56629795, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbad2"]
+bg_color = Color(0.21960784, 0.23137255, 0.2901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5662981, 0.56629825, 0.56629795, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5snma"]
+bg_color = Color(0.7385896, 0.73858964, 0.73858947, 1)
+
+[node name="EquipmentSlot" type="Button" unique_id=1781819543]
+custom_minimum_size = Vector2(40, 40)
+theme_override_styles/normal = SubResource("StyleBoxFlat_poj8k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bbad2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5snma")
+script = ExtResource("1_bbad2")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1073898157]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2k0yb")
