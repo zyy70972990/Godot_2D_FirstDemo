@@ -1,11 +1,15 @@
 extends Node
 
 var player: Player
+var hud: HUD
+var navigation: TileMapLayer
+
 
 const DAMAGE_FX_SCENE = preload("uid://cuosej0g6aki2")
 const DAMAGE_TEXT_SCENE = preload("uid://bd1yha2wpgxh6")
 const NEW_LEVEL_FX_SCENE = preload("uid://cxs0nv7he46cv")
 const DROP_ITEM_SCENE = preload("uid://dsef7t1mlf3f")
+const SHOP_BUTTON_SCENE = preload("uid://cmmpa8wo42siy")
 
 
 

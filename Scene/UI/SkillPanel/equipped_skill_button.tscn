@@ -30,7 +30,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1398589168]
+[node name="Skill_icon" type="TextureRect" parent="." unique_id=1398589168]
 visible = false
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
@@ -65,3 +65,5 @@ grow_vertical = 0
 text = "1"
 label_settings = SubResource("LabelSettings_4rxgp")
 horizontal_alignment = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

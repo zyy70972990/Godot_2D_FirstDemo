@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cmmpa8wo42siy"]
+
+[ext_resource type="Texture2D" uid="uid://tfa5nvtpmise" path="res://Sprites/Items/Food/Shrimp.png" id="1_pfq7g"]
+[ext_resource type="Script" uid="uid://dkr5bhggqnv78" path="res://Sprites/Ui/shop_panel/shop_button.gd" id="1_ym1hq"]
+[ext_resource type="Texture2D" uid="uid://dbfg8jvijdjdb" path="res://Sprites/Items/Treasure/GoldCoin.png" id="2_ym1hq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rxgp"]
+bg_color = Color(0.21960784, 0.23137255, 0.2901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.008202041, 0.008202018, 0.0082020275, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfq7g"]
+bg_color = Color(0.13233358, 0.1404958, 0.1814206, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.008202041, 0.008202018, 0.0082020275, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym1hq"]
+bg_color = Color(0.36040926, 0.37709406, 0.45968884, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.008202041, 0.008202018, 0.0082020275, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="ShopButton" type="Button" unique_id=1164172378]
+custom_minimum_size = Vector2(80, 80)
+theme_override_styles/normal = SubResource("StyleBoxFlat_4rxgp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pfq7g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ym1hq")
+script = ExtResource("1_ym1hq")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1393536843]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -28.0
+offset_right = 20.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pfq7g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=264736009]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=2114065922]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_ym1hq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="HBoxContainer" unique_id=808513433]
+unique_name_in_owner = true
+layout_mode = 2
+text = "20"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

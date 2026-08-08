@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://wwyhoaat2q3s"]
+
+[ext_resource type="PackedScene" uid="uid://bsh256xgtlv7t" path="res://Scene/effects/skill_kunai.tscn" id="1_xejvd"]
+[ext_resource type="Texture2D" uid="uid://bhid8r454l05d" path="res://Sprites/FX/Elemental/Plant/SpriteSheet.png" id="2_dmj87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3yb8"]
+atlas = ExtResource("2_dmj87")
+region = Rect2(0, 0, 30, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyedh"]
+atlas = ExtResource("2_dmj87")
+region = Rect2(30, 0, 30, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olmrt"]
+atlas = ExtResource("2_dmj87")
+region = Rect2(60, 0, 30, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poyqq"]
+atlas = ExtResource("2_dmj87")
+region = Rect2(90, 0, 30, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uexs"]
+atlas = ExtResource("2_dmj87")
+region = Rect2(120, 0, 30, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad8nv"]
+atlas = ExtResource("2_dmj87")
+region = Rect2(150, 0, 30, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qs4q"]
+atlas = ExtResource("2_dmj87")
+region = Rect2(180, 0, 30, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rb4o"]
+atlas = ExtResource("2_dmj87")
+region = Rect2(210, 0, 30, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e8nuq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3yb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyedh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olmrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poyqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uexs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad8nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qs4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rb4o")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="SkillOrbPlant" unique_id=793209359 instance=ExtResource("1_xejvd")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=360569464]
+sprite_frames = SubResource("SpriteFrames_e8nuq")
+frame = 7
+frame_progress = 1.0

@@ -61,7 +61,7 @@ texture = ExtResource("2_o1nbx")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=516280270]
+[node name="LockIcon" type="TextureRect" parent="." unique_id=516280270]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 1
 anchors_preset = 8
@@ -78,3 +78,5 @@ grow_vertical = 2
 texture = ExtResource("3_twl2p")
 expand_mode = 1
 stretch_mode = 5
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

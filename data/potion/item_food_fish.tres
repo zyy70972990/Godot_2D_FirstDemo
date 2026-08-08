@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bbxh8mp14ld3s"]
+
+[ext_resource type="Script" uid="uid://b2gqia77l0nhd" path="res://data/item_data.gd" id="1_8pokw"]
+[ext_resource type="Texture2D" uid="uid://dwgd8p57sh0ip" path="res://Sprites/Items/Food/Fish.png" id="1_l3uxx"]
+
+[resource]
+script = ExtResource("1_8pokw")
+is_consumable = true
+max_stack = 64
+icon = ExtResource("1_l3uxx")
+metadata/_custom_type_script = "uid://b2gqia77l0nhd"

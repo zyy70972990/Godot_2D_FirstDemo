@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://om1nv4dm4xpy"]
+
+[ext_resource type="PackedScene" uid="uid://bsh256xgtlv7t" path="res://Scene/effects/skill_kunai.tscn" id="1_31tjo"]
+[ext_resource type="Texture2D" uid="uid://1nd82wrlt7rb" path="res://Sprites/FX/Elemental/Ice/SpriteSheet.png" id="2_ya87s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61r15"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qur86"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aijq5"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxax0"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gsh1"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgsg7"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv2lc"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxcmg"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20g0y"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6c55"]
+atlas = ExtResource("2_ya87s")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya87s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61r15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qur86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aijq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxax0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gsh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgsg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv2lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxcmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20g0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6c55")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="SkillIce" unique_id=793209359 instance=ExtResource("1_31tjo")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=360569464]
+sprite_frames = SubResource("SpriteFrames_ya87s")

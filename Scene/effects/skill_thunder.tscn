@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ci3di6ebqq05"]
+
+[ext_resource type="PackedScene" uid="uid://bsh256xgtlv7t" path="res://Scene/effects/skill_kunai.tscn" id="1_ify4q"]
+[ext_resource type="Texture2D" uid="uid://bupy7y042obno" path="res://Sprites/FX/Elemental/Thunder/SpriteSheet.png" id="2_cxnnp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylyni"]
+atlas = ExtResource("2_cxnnp")
+region = Rect2(0, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5oo1"]
+atlas = ExtResource("2_cxnnp")
+region = Rect2(20, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3oqp"]
+atlas = ExtResource("2_cxnnp")
+region = Rect2(40, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ux72d"]
+atlas = ExtResource("2_cxnnp")
+region = Rect2(60, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di5gd"]
+atlas = ExtResource("2_cxnnp")
+region = Rect2(80, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfmnt"]
+atlas = ExtResource("2_cxnnp")
+region = Rect2(100, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t3eb"]
+atlas = ExtResource("2_cxnnp")
+region = Rect2(120, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kugx5"]
+atlas = ExtResource("2_cxnnp")
+region = Rect2(140, 0, 20, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vpyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylyni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5oo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3oqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ux72d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di5gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfmnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t3eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kugx5")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="SkillThunder" unique_id=793209359 instance=ExtResource("1_ify4q")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=360569464]
+sprite_frames = SubResource("SpriteFrames_8vpyt")

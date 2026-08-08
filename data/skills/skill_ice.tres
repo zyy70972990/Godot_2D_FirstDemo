@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://ys68sfyf1cud"]
+
+[ext_resource type="Texture2D" uid="uid://c8l4airnvei6x" path="res://Sprites/Ui/Skill Icon/Meteo/Snow.png" id="1_3qfqg"]
+[ext_resource type="PackedScene" uid="uid://om1nv4dm4xpy" path="res://Scene/effects/skill_ice.tscn" id="1_ihc52"]
+[ext_resource type="Script" uid="uid://c5e5syyfab6eb" path="res://data/skills/skill_data.gd" id="2_ihc52"]
+
+[resource]
+script = ExtResource("2_ihc52")
+mana_cost = 1.2
+base_dmg = 1.8
+explosion_effect = ExtResource("1_ihc52")
+icon = ExtResource("1_3qfqg")
+name = "Ice"
+description = "Shoots ice spikes"
+price = 50
+id = "ice"
+metadata/_custom_type_script = "uid://c5e5syyfab6eb"

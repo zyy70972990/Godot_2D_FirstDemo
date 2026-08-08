@@ -61,6 +61,15 @@ func _input(event: InputEvent) -> void:
 		health_component.take_damage(1.0)
 		use_mana(2.0)
 		add_exp(50)
+	
+	if event.is_action_pressed("skill_1"):
+		use_skill(0)
+	elif event.is_action_pressed("skill_2"):
+		use_skill(1)
+	elif event.is_action_pressed("skill_3"):
+		use_skill(2)
+	elif event.is_action_pressed("skill_4"):
+		use_skill(3)
 		
 
 		
@@ -69,7 +78,29 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if fsm.curr_state:
 		fsm.curr_state.process_state(delta)
-			
+		
+		
+
+
+func use_skill(index: int) ->void:
+	if index < 0 or index >= GameData.skill_slots.size():
+		return
+	
+	var skill: SkillData = GameData.skill_slots[index]
+	if not skill: return
+	if not selected_enemy: return
+	if curr_mana < skill.mana_cost: return
+	
+	use_mana(skill.mana_cost)
+	var total_dmg = get_damage(skill.base_dmg)
+	selected_enemy.health_component.take_damage(total_dmg)
+	
+	var exp_effect: Node2D = skill.explosion_effect.instantiate()
+	exp_effect.global_position = selected_enemy.global_position
+	get_tree().root.add_child(exp_effect)
+	Ref.create_damage_text(selected_enemy.global_position,total_dmg)
+	
+		
 func is_moving() -> bool:
 	var moving_input:Array = ["move_down","move_up","move_left","move_right"]
 	for input in moving_input:

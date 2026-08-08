@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cl13krvojn2ai"]
+
+[ext_resource type="PackedScene" uid="uid://bsh256xgtlv7t" path="res://Scene/effects/skill_kunai.tscn" id="1_pe2co"]
+
+[node name="SkillWaterSplash" unique_id=793209359 instance=ExtResource("1_pe2co")]

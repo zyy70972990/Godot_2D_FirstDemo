@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dkqoiqatkaxet"]
+
+[ext_resource type="Script" uid="uid://dpcomixc0wxl3" path="res://data/dialogue/dialogue_data.gd" id="1_2atkj"]
+[ext_resource type="Texture2D" uid="uid://dclgu4xejljw6" path="res://Sprites/Actor/Characters/Caveman/Faceset.png" id="1_n0kmq"]
+
+[resource]
+script = ExtResource("1_2atkj")
+npc_name = "Testing"
+npc_icon = ExtResource("1_n0kmq")
+line = Array[String](["Hello,boy", "Good Bye"])
+metadata/_custom_type_script = "uid://dpcomixc0wxl3"
