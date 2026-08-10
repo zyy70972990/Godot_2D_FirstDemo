@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://dwnp7nko0xsmt"]
+
+[ext_resource type="Script" uid="uid://cfeg8pkt16ig1" path="res://Scene/UI/quest_panel/quest_panel.gd" id="1_icyda"]
+[ext_resource type="PackedScene" uid="uid://r1u507m6fd02" path="res://Scene/UI/quest_panel/quest_button.tscn" id="1_xt5xn"]
+[ext_resource type="Script" uid="uid://brrrgw2jbp2ql" path="res://data/quest/quest_data.gd" id="2_ngnuo"]
+[ext_resource type="Resource" uid="uid://c6l05qay4gm7g" path="res://data/quest/quest_kill_10_enery.tres" id="3_5lepu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dd21q"]
+bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.101960786, 0.11372549, 0.14901961, 1)
+shadow_size = 2
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4rxgp"]
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngnuo"]
+bg_color = Color(0.6273193, 0.108116396, 0.16809434, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.73540634, 0.1285392, 0.034973342, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lepu"]
+bg_color = Color(0.3980385, 0.053029895, 0.09282733, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.73540634, 0.1285392, 0.034973342, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oepiv"]
+bg_color = Color(0.92351806, 0.23753586, 0.2946419, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.73540634, 0.1285392, 0.034973342, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="QuestPanel" type="Control" unique_id=1033814760]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_icyda")
+quests = Array[ExtResource("2_ngnuo")]([ExtResource("3_5lepu")])
+
+[node name="Background" type="ColorRect" parent="." unique_id=519171629]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -11.0
+offset_right = -8.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.19607843)
+
+[node name="Panel" type="Panel" parent="." unique_id=777179089]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dd21q")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2086353787]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1166779458]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1489294816]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Quest"
+label_settings = SubResource("LabelSettings_4rxgp")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=299934265]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="QuestButtonContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1873582145]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="QuestButton" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/QuestButtonContainer" unique_id=2129092390 instance=ExtResource("1_xt5xn")]
+layout_mode = 2
+
+[node name="QuestButton2" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/QuestButtonContainer" unique_id=1677057869 instance=ExtResource("1_xt5xn")]
+layout_mode = 2
+
+[node name="QuestButton3" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/QuestButtonContainer" unique_id=1996408470 instance=ExtResource("1_xt5xn")]
+layout_mode = 2
+
+[node name="QuestButton4" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/QuestButtonContainer" unique_id=1737269517 instance=ExtResource("1_xt5xn")]
+layout_mode = 2
+
+[node name="QuestButton5" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/QuestButtonContainer" unique_id=784683885 instance=ExtResource("1_xt5xn")]
+layout_mode = 2
+
+[node name="QuestButton6" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/QuestButtonContainer" unique_id=2038454595 instance=ExtResource("1_xt5xn")]
+layout_mode = 2
+
+[node name="QuestButton7" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/QuestButtonContainer" unique_id=518224340 instance=ExtResource("1_xt5xn")]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="." unique_id=794655085]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 747.0
+offset_top = 114.0
+offset_right = 784.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ngnuo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5lepu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oepiv")
+text = "X"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://crjmvp337sk0c"]
+
+[ext_resource type="PackedScene" uid="uid://cjheihtqjsb43" path="res://Scene/NPC/npc_simple.tscn" id="1_lhxer"]
+[ext_resource type="Texture2D" uid="uid://7eclsekh7b8l" path="res://Sprites/Actor/Characters/OldMan/Faceset.png" id="2_rih4w"]
+[ext_resource type="Texture2D" uid="uid://c0u73y6tyua6h" path="res://Sprites/Actor/Characters/OldMan/SpriteSheet.png" id="2_rq25m"]
+[ext_resource type="Script" uid="uid://dpcomixc0wxl3" path="res://data/dialogue/dialogue_data.gd" id="3_6uya2"]
+
+[sub_resource type="Resource" id="Resource_eh1d1"]
+script = ExtResource("3_6uya2")
+npc_name = "QuestPublisher"
+npc_icon = ExtResource("2_rih4w")
+line = Array[String](["Welcome, boy.", "Finish the quest and get reward."])
+metadata/_custom_type_script = "uid://dpcomixc0wxl3"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rih4w"]
+atlas = ExtResource("2_rq25m")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6uya2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rih4w")
+}],
+"loop": 0,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[node name="NPC_quest" unique_id=2135578904 instance=ExtResource("1_lhxer")]
+type = 2
+dialogue = SubResource("Resource_eh1d1")
+
+[node name="AnimSprite" parent="." index="1" unique_id=1482329698]
+sprite_frames = SubResource("SpriteFrames_6uya2")

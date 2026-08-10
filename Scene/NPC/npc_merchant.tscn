@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cjheihtqjsb43" path="res://Scene/NPC/npc_simple.tscn" id="1_lr1ts"]
 [ext_resource type="Texture2D" uid="uid://cwsfnuay7n3t" path="res://Sprites/Actor/Characters/Inspector/SeparateAnim/Idle.png" id="2_ba2b3"]
+[ext_resource type="Resource" uid="uid://bnk7d54r8rp3w" path="res://data/dialogue/shop_dialogue.tres" id="2_qnk8l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnk8l"]
 atlas = ExtResource("2_ba2b3")
@@ -20,6 +21,7 @@ animations = [{
 
 [node name="NPC_Merchant" unique_id=2135578904 instance=ExtResource("1_lr1ts")]
 type = 1
+dialogue = ExtResource("2_qnk8l")
 
 [node name="AnimSprite" parent="." index="1" unique_id=1482329698]
 sprite_frames = SubResource("SpriteFrames_q81u6")

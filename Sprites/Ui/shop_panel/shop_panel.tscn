@@ -66,7 +66,7 @@ grow_vertical = 2
 script = ExtResource("1_5mndt")
 items = Array[ExtResource("2_j12tj")]([ExtResource("3_gfekg"), ExtResource("4_h3e8o"), ExtResource("5_mu52c"), ExtResource("6_7gpgd"), ExtResource("7_7gpgd")])
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1540031537]
+[node name="Background" type="ColorRect" parent="." unique_id=1540031537]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 15

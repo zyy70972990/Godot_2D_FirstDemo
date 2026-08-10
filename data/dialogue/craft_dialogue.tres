@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://djpmfcbkcoxl6"]
+
+[ext_resource type="Texture2D" uid="uid://mnc18v6udvuc" path="res://Sprites/Actor/Characters/Hunter/Faceset.png" id="1_21oxn"]
+[ext_resource type="Script" uid="uid://dpcomixc0wxl3" path="res://data/dialogue/dialogue_data.gd" id="1_pep5a"]
+
+[resource]
+script = ExtResource("1_pep5a")
+npc_name = "Crafter"
+npc_icon = ExtResource("1_21oxn")
+line = Array[String](["Welcome, you can make anything you want here."])
+metadata/_custom_type_script = "uid://dpcomixc0wxl3"

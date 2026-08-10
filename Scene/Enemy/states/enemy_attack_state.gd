@@ -30,4 +30,4 @@ func apply_damage() -> void:
 		Ref.player.health_component.take_damage(enemy.damage)
 		Ref.create_damage_fx(Ref.player.global_position)
 		Ref.create_damage_text(Ref.player.global_position,enemy.damage)
-		
+		SoundMangaer.play(Sound.IMPACT)

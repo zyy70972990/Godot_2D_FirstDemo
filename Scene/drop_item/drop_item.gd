@@ -28,4 +28,8 @@ func shine_item() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	Inventory.add_item(item,amount)
+	SoundMangaer.play(Sound.PICKUP)
 	queue_free()
+	
+	
+	

@@ -15,6 +15,10 @@ run/main_scene="uid://dhmdat3hh8t84"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cpi1hf15mnoq2"
+
 [autoload]
 
 EventBus="*uid://b1y3xoqhassrf"
@@ -22,6 +26,7 @@ Inventory="*uid://dj0cycktcv7yl"
 Ref="*uid://bn3ogwm8reokk"
 GameData="*uid://6sg831wpihul"
 Transition="*uid://b8n137m5ie8hb"
+SoundMangaer="*uid://bnqk63dkryvem"
 
 [display]
 

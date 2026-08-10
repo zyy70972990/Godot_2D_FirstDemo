@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bnqk63dkryvem"]
+
+[ext_resource type="Script" uid="uid://cmonhccedhugk" path="res://autoloads/sound_mangaer.gd" id="1_sf0sl"]
+[ext_resource type="AudioStream" uid="uid://cs2queybqq206" path="res://Audio/Musics/1 - Adventure Begin.ogg" id="2_lhjpx"]
+
+[node name="SoundMangaer" type="Node" unique_id=2022748158 node_paths=PackedStringArray("stream_players")]
+script = ExtResource("1_sf0sl")
+stream_players = [NodePath("AudioStreamPlayer2D"), NodePath("AudioStreamPlayer2D2"), NodePath("AudioStreamPlayer2D3"), NodePath("AudioStreamPlayer2D4"), NodePath("AudioStreamPlayer2D5"), NodePath("AudioStreamPlayer2D6"), NodePath("AudioStreamPlayer2D7"), NodePath("AudioStreamPlayer2D8"), NodePath("AudioStreamPlayer2D9"), NodePath("AudioStreamPlayer2D10")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=2135847849]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer" parent="." unique_id=1102528755]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer" parent="." unique_id=1587330587]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer" parent="." unique_id=635213333]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer" parent="." unique_id=87140849]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D6" type="AudioStreamPlayer" parent="." unique_id=494730430]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D7" type="AudioStreamPlayer" parent="." unique_id=1891719665]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D8" type="AudioStreamPlayer" parent="." unique_id=819931615]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D9" type="AudioStreamPlayer" parent="." unique_id=245251424]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D10" type="AudioStreamPlayer" parent="." unique_id=745206492]
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1469039076]
+stream = ExtResource("2_lhjpx")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"

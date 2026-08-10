@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://tbtqpmoc4jxv"]
+
+[ext_resource type="Script" uid="uid://bb4iya8g26t2" path="res://Scene/UI/craft_panel/craft_button.gd" id="1_muyqd"]
+[ext_resource type="Texture2D" uid="uid://tfa5nvtpmise" path="res://Sprites/Items/Food/Shrimp.png" id="1_nwykm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rxgp"]
+bg_color = Color(0.21960784, 0.23137255, 0.2901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.008202041, 0.008202018, 0.0082020275, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfq7g"]
+bg_color = Color(0.13233358, 0.1404958, 0.1814206, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.008202041, 0.008202018, 0.0082020275, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym1hq"]
+bg_color = Color(0.36040926, 0.37709406, 0.45968884, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.008202041, 0.008202018, 0.0082020275, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="CraftButton" type="Button" unique_id=1142051891]
+custom_minimum_size = Vector2(80, 80)
+theme_override_styles/normal = SubResource("StyleBoxFlat_4rxgp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pfq7g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ym1hq")
+script = ExtResource("1_muyqd")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1173525816]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nwykm")
+expand_mode = 1
+stretch_mode = 5

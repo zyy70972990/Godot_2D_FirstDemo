@@ -18,6 +18,8 @@ func _ready() -> void:
 
 
 #region Find
+
+
 func find_item_indexes(item:ItemData,with_space: bool =false) ->Array[int]:
 	var found:Array[int] = []
 	for i in inventory.size():
@@ -31,6 +33,14 @@ func find_item_indexes(item:ItemData,with_space: bool =false) ->Array[int]:
 				
 	return found
 
+
+func count_item(item: ItemData) -> int:
+	var total: int = 0
+	for slot in inventory:
+		if slot and slot.item.name == item.name:
+			total += slot.quantity
+	return total
+	
 #endregion
 
 #region add/remove
@@ -68,6 +78,28 @@ func add_item(item: ItemData,amount: int = 1) -> void:
 	if added > 0:
 		on_inventory_changed.emit()
 
+func remove_item(item: ItemData, amount: int) -> void:
+	var remaining = amount
+	
+	var slots = find_item_indexes(item)
+	slots.reverse()
+	
+	for index in slots:
+		if remaining <= 0:
+			break
+		
+		var slot: SlotData = inventory[index]
+		var take = min(slot.quantity,remaining)
+		slot.quantity -= take
+		remaining -= take
+		
+		if slot.quantity <= 0:
+			inventory[index] = null
+		
+	var removed = amount - remaining
+	if removed > 0:
+		on_inventory_changed.emit()
+		
 #endregion	
 
 #region swap

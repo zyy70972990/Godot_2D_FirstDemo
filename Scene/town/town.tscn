@@ -19,10 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://cvmialwaclmva" path="res://Sprites/Ui/shop_panel/shop_panel.tscn" id="19_tw7l8"]
 [ext_resource type="PackedScene" uid="uid://dirbebav2iibh" path="res://Scene/UI/Inventory_slot/inventory_slot.tscn" id="20_dcjkg"]
 [ext_resource type="PackedScene" uid="uid://dsef7t1mlf3f" path="res://Scene/drop_item/drop_item.tscn" id="20_jgr14"]
+[ext_resource type="PackedScene" uid="uid://1m5mpcuc6437" path="res://Scene/UI/craft_panel/craft_panel.tscn" id="20_te85u"]
 [ext_resource type="Resource" uid="uid://fnrj5iympnyy" path="res://data/potion/item_hp_small_2.tres" id="21_dcjkg"]
 [ext_resource type="PackedScene" uid="uid://b0x3rs8suy6r4" path="res://Scene/UI/DialoguePanel/dialogue_panel.tscn" id="21_kx2re"]
+[ext_resource type="PackedScene" uid="uid://dwnp7nko0xsmt" path="res://Scene/UI/quest_panel/quest_panel.tscn" id="21_mj3oo"]
 [ext_resource type="Resource" uid="uid://dsegq7skovpf1" path="res://data/potion/item_mp_small_2.tres" id="23_tm4xt"]
 [ext_resource type="Resource" uid="uid://bkveh41fbcqqy" path="res://data/equipment/Item_equip_helmet.tres" id="24_dlj8m"]
+[ext_resource type="Resource" uid="uid://b1bljnowp73lr" path="res://data/potion/item_food_shrimp.tres" id="25_2y8nj"]
 [ext_resource type="Script" uid="uid://m1rdtfhne4lk" path="res://Scene/Enemy/enemy_zone.gd" id="25_iwyp7"]
 [ext_resource type="PackedScene" uid="uid://c02w2xu4pxkno" path="res://Scene/Enemy/enemy_mouse.tscn" id="26_rxbpy"]
 [ext_resource type="PackedScene" uid="uid://b06cm6wnui062" path="res://Scene/Enemy/enemy_octopus.tscn" id="27_s7qtp"]
@@ -32,6 +35,9 @@
 [ext_resource type="PackedScene" uid="uid://cjheihtqjsb43" path="res://Scene/NPC/npc_simple.tscn" id="29_kx2re"]
 [ext_resource type="Texture2D" uid="uid://dkdqf3xg6ba3l" path="res://Sprites/Actor/Characters/Inspector/Faceset.png" id="30_j6lao"]
 [ext_resource type="Script" uid="uid://dpcomixc0wxl3" path="res://data/dialogue/dialogue_data.gd" id="31_te85u"]
+[ext_resource type="PackedScene" uid="uid://dcyqbu1ii3soj" path="res://Scene/NPC/npc_crafter.tscn" id="33_3g1qh"]
+[ext_resource type="PackedScene" uid="uid://crjmvp337sk0c" path="res://Scene/NPC/npc_quest.tscn" id="35_la1oq"]
+[ext_resource type="Resource" uid="uid://b1nt2458viquw" path="res://data/dialogue/quest_dialogue.tres" id="37_513vq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6s5d"]
 texture = ExtResource("4_ii2sd")
@@ -1473,20 +1479,34 @@ visible = false
 [node name="ShopPanel" parent="HUD" unique_id=1031684808 instance=ExtResource("19_tw7l8")]
 visible = false
 
+[node name="CraftPanel" parent="HUD" unique_id=1778350050 instance=ExtResource("20_te85u")]
+visible = false
+
+[node name="QuestPanel" parent="HUD" unique_id=1033814760 instance=ExtResource("21_mj3oo")]
+visible = false
+
 [node name="DropItem" parent="." unique_id=806113795 instance=ExtResource("20_jgr14")]
 z_index = 10
 position = Vector2(115, -85)
 item = ExtResource("21_dcjkg")
+amount = 50
 
 [node name="DropItem3" parent="." unique_id=1352658479 instance=ExtResource("20_jgr14")]
 z_index = 10
 position = Vector2(102, -130)
 item = ExtResource("23_tm4xt")
+amount = 50
 
 [node name="DropItem2" parent="." unique_id=240968904 instance=ExtResource("20_jgr14")]
 z_index = 10
 position = Vector2(71, -52)
 item = ExtResource("24_dlj8m")
+
+[node name="DropItem4" parent="." unique_id=1321026862 instance=ExtResource("20_jgr14")]
+z_index = 10
+position = Vector2(26, 114)
+item = ExtResource("25_2y8nj")
+amount = 50
 
 [node name="EnemyZones" type="Node" parent="." unique_id=2034644172]
 
@@ -1515,13 +1535,20 @@ z_index = 1
 position = Vector2(-149, -21)
 
 [node name="NPC_Fighter" parent="NPC" unique_id=835558237 instance=ExtResource("28_b2kgw")]
-position = Vector2(22, -33)
-dialogue = null
+position = Vector2(22, -34)
 can_move = true
 
 [node name="NPC_Merchant" parent="NPC" unique_id=192733037 instance=ExtResource("28_tw7l8")]
 position = Vector2(-130, -1027)
 dialogue = SubResource("Resource_3g1qh")
+
+[node name="NPC_crafter" parent="NPC" unique_id=192619985 instance=ExtResource("33_3g1qh")]
+position = Vector2(-128, 98)
+type = 3
+
+[node name="NPC_quest" parent="NPC" unique_id=956866915 instance=ExtResource("35_la1oq")]
+position = Vector2(80, 98)
+dialogue = ExtResource("37_513vq")
 
 [node name="TownPortal" parent="." unique_id=284399209 node_paths=PackedStringArray("target_transit_pos") instance=ExtResource("28_kx2re")]
 z_index = 1

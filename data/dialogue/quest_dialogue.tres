@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://b1nt2458viquw"]
+
+[ext_resource type="Script" uid="uid://dpcomixc0wxl3" path="res://data/dialogue/dialogue_data.gd" id="1_dlpvh"]
+[ext_resource type="Texture2D" uid="uid://7eclsekh7b8l" path="res://Sprites/Actor/Characters/OldMan/Faceset.png" id="1_pvfmo"]
+
+[resource]
+script = ExtResource("1_dlpvh")
+npc_name = "QuestPublisher"
+npc_icon = ExtResource("1_pvfmo")
+line = Array[String](["Welcome, boy.", "Finish the quest and get reward."])
+metadata/_custom_type_script = "uid://dpcomixc0wxl3"

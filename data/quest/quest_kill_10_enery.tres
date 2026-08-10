@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://c6l05qay4gm7g"]
+
+[ext_resource type="Resource" uid="uid://dsmkhevo0w0jr" path="res://data/potion/item_medipack_20.tres" id="1_q6a2d"]
+[ext_resource type="Script" uid="uid://brrrgw2jbp2ql" path="res://data/quest/quest_data.gd" id="2_82a4x"]
+
+[resource]
+script = ExtResource("2_82a4x")
+quest_id = "enemy_10"
+quest_name = "Enemy_10"
+quest_description = "Search and kill 10 enemies"
+quest_item_reward = ExtResource("1_q6a2d")
+quest_target_value = 3
+metadata/_custom_type_script = "uid://brrrgw2jbp2ql"

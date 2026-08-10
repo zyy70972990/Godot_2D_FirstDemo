@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://r1u507m6fd02"]
+
+[ext_resource type="Texture2D" uid="uid://bh25ayt3werxw" path="res://Sprites/Items/Potion/Medipack.png" id="1_4ows2"]
+[ext_resource type="Script" uid="uid://cbt0puppirfmk" path="res://Scene/UI/quest_panel/quest_button.gd" id="1_rh3k5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt5xn"]
+bg_color = Color(0.7062796, 0.34639978, 0.084106185, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rh3k5"]
+bg_color = Color(0.5317542, 0.2521667, 0.046121135, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_honrf"]
+bg_color = Color(0.7350638, 0.35866708, 0.091444604, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_y87yr"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ows2"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_rh3k5"]
+font_size = 12
+
+[node name="QuestButton" type="Button" unique_id=2129092390]
+custom_minimum_size = Vector2(270, 90)
+theme_override_styles/normal = SubResource("StyleBoxFlat_xt5xn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh3k5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_honrf")
+script = ExtResource("1_rh3k5")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=735470967]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2034404341]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1089987563]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=453887324]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="QuestName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1321679680]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quest Name"
+label_settings = SubResource("LabelSettings_y87yr")
+
+[node name="QuestDescription" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=575492319]
+unique_name_in_owner = true
+layout_mode = 2
+text = "QuestDescription QuestDescription QuestDescription"
+label_settings = SubResource("LabelSettings_4ows2")
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1300042002]
+layout_mode = 2
+
+[node name="RewardLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=706776324]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reward"
+label_settings = SubResource("LabelSettings_rh3k5")
+
+[node name="ItemIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=588990264]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("1_4ows2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuestProgress" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1386182681]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/10"
+label_settings = SubResource("LabelSettings_rh3k5")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

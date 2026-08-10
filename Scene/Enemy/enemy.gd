@@ -83,5 +83,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func _on_health_component_on_dead() -> void:
 	drop_loot()
+	EventBus.on_quest_progress_updated.emit("enemy_10",1)
 	Ref.player.add_exp(exp_amount)
 	queue_free()

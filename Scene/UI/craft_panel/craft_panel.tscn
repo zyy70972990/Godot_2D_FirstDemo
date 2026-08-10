@@ -1,0 +1,474 @@
+[gd_scene format=3 uid="uid://1m5mpcuc6437"]
+
+[ext_resource type="PackedScene" uid="uid://tbtqpmoc4jxv" path="res://Scene/UI/craft_panel/craft_button.tscn" id="1_mkl6t"]
+[ext_resource type="Script" uid="uid://63prr7t5r03s" path="res://Scene/UI/craft_panel/craft_panel.gd" id="1_o00jq"]
+[ext_resource type="Script" uid="uid://bouyghuibvjh4" path="res://data/crafting/craft_data.gd" id="2_g4k66"]
+[ext_resource type="Texture2D" uid="uid://bh25ayt3werxw" path="res://Sprites/Items/Potion/Medipack.png" id="2_gnl87"]
+[ext_resource type="Texture2D" uid="uid://brbowyharou0c" path="res://Sprites/Items/Potion/LifePot.png" id="3_4uvmh"]
+[ext_resource type="Resource" uid="uid://cdjqc1d2wo20" path="res://data/crafting/recipe_medipack.tres" id="3_wjsx4"]
+[ext_resource type="Texture2D" uid="uid://tfa5nvtpmise" path="res://Sprites/Items/Food/Shrimp.png" id="4_mgv1p"]
+[ext_resource type="Texture2D" uid="uid://d106bpe85jeci" path="res://Sprites/Minus.png" id="5_uc51a"]
+[ext_resource type="Texture2D" uid="uid://bltswclxeltyo" path="res://Sprites/Plus.png" id="6_o00jq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipcjr"]
+bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.101960786, 0.11372549, 0.14901961, 1)
+shadow_size = 2
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mkl6t"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_4uvmh"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_xjbn1"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_5snma"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apsb0"]
+bg_color = Color(0.28324047, 0.30818784, 0.37662476, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.061926723, 0.0619267, 0.06192662, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4k66"]
+bg_color = Color(0.13373727, 0.14979854, 0.18888143, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.061926723, 0.0619267, 0.06192662, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjsx4"]
+bg_color = Color(0.37889493, 0.41178071, 0.49141556, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.061926723, 0.0619267, 0.06192662, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_4rxgp"]
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1ji5"]
+bg_color = Color(0.28324047, 0.30818784, 0.37662476, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.061926723, 0.0619267, 0.06192662, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfhrt"]
+bg_color = Color(0.13373727, 0.14979854, 0.18888143, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.061926723, 0.0619267, 0.06192662, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv6wv"]
+bg_color = Color(0.37889493, 0.41178071, 0.49141556, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.061926723, 0.0619267, 0.06192662, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rxgp"]
+bg_color = Color(0.28324047, 0.30818784, 0.37662476, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.061926723, 0.0619267, 0.06192662, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spvgt"]
+bg_color = Color(0.13373727, 0.14979854, 0.18888143, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.061926723, 0.0619267, 0.06192662, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3osbg"]
+bg_color = Color(0.37889493, 0.41178071, 0.49141556, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.061926723, 0.0619267, 0.06192662, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gpgd"]
+bg_color = Color(0.6273193, 0.108116396, 0.16809434, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.73540634, 0.1285392, 0.034973342, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urmkx"]
+bg_color = Color(0.3980385, 0.053029895, 0.09282733, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.73540634, 0.1285392, 0.034973342, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okcj3"]
+bg_color = Color(0.92351806, 0.23753586, 0.2946419, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.73540634, 0.1285392, 0.034973342, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="CraftPanel" type="Control" unique_id=1778350050]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o00jq")
+recipes = Array[ExtResource("2_g4k66")]([ExtResource("3_wjsx4")])
+
+[node name="Background" type="ColorRect" parent="." unique_id=454960642]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -11.0
+offset_right = -8.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.19607843)
+
+[node name="Panel" type="Panel" parent="." unique_id=951972215]
+custom_minimum_size = Vector2(650, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -250.0
+offset_right = 325.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ipcjr")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2050012295]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=81891440]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1154558235]
+layout_mode = 2
+text = "Craft"
+label_settings = SubResource("LabelSettings_mkl6t")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=88170317]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="Container" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1994495984]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(332, 0)
+layout_mode = 2
+columns = 4
+
+[node name="CraftButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=1142051891 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton2" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=1394527826 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton3" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=1900967709 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton4" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=1572586879 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton5" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=705805283 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton6" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=989078172 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton7" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=294569154 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton8" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=905432416 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton9" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=1430591602 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton10" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=1017236404 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton11" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=1821696828 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton12" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=547848819 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton13" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=43090002 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton14" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=393342092 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton15" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=113513956 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="CraftButton16" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Container" unique_id=621895580 instance=ExtResource("1_mkl6t")]
+layout_mode = 2
+
+[node name="MaterialContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=397708438]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer" unique_id=1196948458]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/HBoxContainer" unique_id=2094066604]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("2_gnl87")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemName" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/HBoxContainer" unique_id=510112775]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Medipack"
+label_settings = SubResource("LabelSettings_4uvmh")
+
+[node name="Space" type="Control" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer" unique_id=1215692088]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer" unique_id=563911208]
+layout_mode = 2
+text = "Materials:"
+label_settings = SubResource("LabelSettings_xjbn1")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer" unique_id=1205639472]
+layout_mode = 2
+
+[node name="Material_1_Icon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/HBoxContainer2" unique_id=1337959780]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("3_4uvmh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Material_1_Name" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/HBoxContainer2" unique_id=703697734]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Life Potion"
+
+[node name="Material_1_Quantity" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/HBoxContainer2" unique_id=2032919515]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "5/64"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer" unique_id=1979874022]
+layout_mode = 2
+
+[node name="Material_2_Icon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/HBoxContainer3" unique_id=604650983]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("4_mgv1p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Material_2_Name" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/HBoxContainer3" unique_id=107593591]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Shrimp"
+
+[node name="Material_2_Quantity" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/HBoxContainer3" unique_id=118766072]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "3/64"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer" unique_id=167923066]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer" unique_id=899392209]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/HBoxContainer" unique_id=1177136813]
+layout_mode = 2
+text = "Amount: "
+label_settings = SubResource("LabelSettings_5snma")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/HBoxContainer" unique_id=874639719]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 12
+
+[node name="RemoveButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1984732294]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_apsb0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g4k66")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wjsx4")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/HBoxContainer/HBoxContainer/RemoveButton" unique_id=1612601892]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uc51a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AmountLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=224076474]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_4rxgp")
+
+[node name="AddButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=346763664]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_s1ji5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dfhrt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fv6wv")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/HBoxContainer/HBoxContainer/AddButton" unique_id=753439762]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -12.5
+offset_right = 12.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_o00jq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CraftButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer" unique_id=172359961]
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_4rxgp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_spvgt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3osbg")
+text = "Craft
+"
+
+[node name="CloseButton" type="Button" parent="." unique_id=185362543]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 920.0
+offset_top = 119.0
+offset_right = 955.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gpgd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_urmkx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_okcj3")
+text = "X"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/HBoxContainer/HBoxContainer/RemoveButton" to="." method="_on_remove_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/HBoxContainer/HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/MaterialContainer/VBoxContainer/CraftButton" to="." method="_on_craft_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
